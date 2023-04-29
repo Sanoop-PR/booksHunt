@@ -1,0 +1,489 @@
+.Main_container {
+	min-height: 100vh;
+	/* margin-top: 50px; */
+	/* background: url('images/bookslibrery.jpeg'); */
+	background-size: cover;
+	width: 100%;
+	background-repeat: no-repeat;
+
+}
+.book-wrapper {
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+.book-search {
+	margin: 2rem 0;
+}
+.book-search-box {
+	margin: 1.2rem 0;
+	display: flex;
+	align-items: stretch;
+}
+.search-control,
+.search-btn {
+	width: 100%;
+}
+.search-control {
+	padding: 0 1rem;
+	font-size: 1.1rem;
+	/* font-family: inherit; */
+	outline: 0;
+	border: 1px solid black;
+	color: rgb(0, 47, 255);
+}
+.search-control::placeholder {
+	color: rgb(145, 145, 145);
+}
+.search-btn {
+	width: 55px;
+	height: 40px;
+	font-size: 1.4rem;
+	background: red;
+	color: #ffffff;
+	border: none;
+	transition: all 0.4s linear;
+}
+.search-btn:hover {
+	background: blue;
+}
+
+/* result display */
+.book-result {
+	margin-top: 4rem;
+}
+
+.book {
+	margin: 2.4rem 0;
+}
+
+
+
+
+
+
+
+
+
+/* book-details */
+.book-details {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	display: none;
+	padding: 2rem 0;
+	width: 100%;
+	height: 100vh;
+}
+/* inner first div */
+.details-display {
+	background: url('https://c0.wallpaperflare.com/preview/244/655/706/ancient-antique-art-backdrop.jpg');
+	background-size: cover;
+	width: inherit;
+	height: inherit;
+	position: relative;
+	margin: auto;
+	display: flex;
+	overflow-y: scroll;
+}
+
+.book_image {
+	width: 30%;
+	display: grid;
+	place-content: center;
+}
+.book_image img {
+	border: 1px solid;
+}
+.about-book {
+	width: 100%;
+}
+.about-book-heading {
+	height: 40vh;
+	display: grid;
+	place-content: center;
+}
+.about-book-description {
+	height: 60vh;
+}
+.rating {
+	border-radius: 10px;
+	padding: 8px 10px;
+	font-size: 18px;
+	margin-right: 4px;
+	line-height: 65px;
+	border: 2px solid black;
+}
+.about-book-heading {
+	color: rgb(0, 0, 0);
+}
+.about-book-description {
+	color: black;
+	padding-right: 20px;
+	padding-bottom: 0px;
+
+}
+.about-book-description p {
+	text-align: justify;
+	
+}
+
+
+
+
+/* close button */
+.details-close-btn {
+	margin-top: 10px;
+	position: absolute;
+	z-index: 2;
+	/* top: 40px; */
+	right: 15px;
+	border: 0;
+	background: none;
+  box-sizing: border-box;
+  color: transparent;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  line-height: 32px;
+  outline: none;
+  overflow: hidden;
+  padding:5px 2px 2px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+  width: 50px;
+}
+.details-close-btn::before,
+.details-close-btn::after{
+	background-color: white;
+  content: '';
+  display: block;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  transform-origin: center left;
+  transition: all 0.2s ease-in;
+  width: 50px;
+  z-index: -1;
+}
+.details-close-btn::before{
+	top: 0;
+	transform: rotate(45deg);
+}
+.details-close-btn::after{
+	bottom: 0;
+  transform: rotate(-45deg);
+}
+.details-close-btn:hover{
+	color: #8A2387;
+}
+.details-close-btn:hover::before,
+.details-close-btn:hover::after{
+	height: 50px;
+  transform: rotate(0deg);
+}
+
+
+
+
+
+
+.book-details::-webkit-scrollbar {
+	width: 10px;
+}
+.book-details::-webkit-scrollbar-thumb {
+	background: #f0f0f0;
+	border-radius: 2rem;
+}
+
+
+
+/* js related */
+.showRecipe {
+	display: block;
+}
+
+
+
+/* media queries */
+@media screen and (min-width: 200px) {
+	.book_image img {
+		width: 60px;
+		height: 90px;
+	}
+
+	.book_image {
+		padding-left: 10px;
+	}
+
+	.about-book-heading h1 {
+		font-size: 1.3rem;
+	}
+
+	.about-book-heading h2 {
+		font-size: 1rem;
+	}
+
+	.about-book-description p {
+		font-size: .8rem;
+	}
+}
+
+
+@media screen and (min-width: 600px) {
+	.book-search-box {
+		width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.book_image img {
+		width: 100px;
+		height: 140px;
+	}
+	/* .book-container{
+		margin: auto;
+		margin-bottom: 20px;
+	} */
+	blockquote q{
+		/* font-size: 20px; */
+	}
+}
+
+
+@media screen and (min-width: 768px) {
+	#book {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+	}
+
+	.about-book-heading h1 {
+		font-size: 2rem;
+	}
+
+	.about-book-heading h2 {
+		font-size: 1.2rem;
+	}
+
+	.about-book-description p {
+		font-size: 1rem;
+	}
+
+	/* .book-details {
+	   width: 100%;
+	   height: 100vh;
+	} */
+	
+}
+
+@media screen and (min-width: 992px) {
+	#book {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.book_image img {
+		width: 140px;
+		height: 200px;
+	}
+
+	.about-book-heading h1 {
+		font-size: 3rem;
+	}
+
+	.about-book-heading h2 {
+		font-size: 1.6rem;
+	}
+
+	.about-book-description p {
+		font-size: 1.1rem;
+	}
+}
+
+@media screen and (max-width: 840px) {
+	blockquote q,blockquote cite{
+		font-size: 40px;
+	}
+}
+@media screen and (max-width: 740px) {
+	blockquote q,blockquote cite{
+		font-size: 35px;
+	}
+	.book-container{
+		margin: auto;
+		/* margin-bottom: 20px; */
+	}
+	.details-close-btn{
+		width: 20px;
+		line-height: 20px;
+		padding:2px 2px 2px;
+
+	}
+}
+@media screen and (max-width: 640px) {
+	blockquote q,blockquote cite{
+		font-size: 30px;
+	}
+}
+@media screen and (max-width: 540px) {
+	blockquote q,blockquote cite{
+		font-size: 25px;
+	}
+}
+@media screen and (max-width: 440px) {
+	blockquote q,blockquote cite{
+		font-size: 20px;
+	}
+	blockquote{
+		/* line-height: 1rem; */
+	}
+	.book-container{
+		margin: auto;
+		/* margin-bottom: 20px; */
+	}
+}
+
+
+
+/* result - card */
+
+.book-container {
+	width: 300px;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.731);
+	margin-bottom: 20px;
+}
+.book-container .post {
+	width: inherit;
+	height: 450px;
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+	position: relative;
+	border: 2px solid;
+	border-radius: 5px;
+
+}
+.book-container .post .header_post {
+	width: 100%;
+	height: 55%;
+	position: absolute;
+	top: 20px;
+	-webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+	-moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+	-ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+	-o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+	transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+}
+.book-container .post .header_post img {
+	width: 50%;
+	height: 90%;
+	transition: ease-in-out 600ms;
+}
+.book-container .post .body_post {
+	width: 100%;
+	height: 45%;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+	cursor: pointer;
+}
+.post_content {
+	width: 80%;
+	height: 80%;
+	position: relative;
+}
+.post_content span {
+	font-size: 12px;
+	text-transform: uppercase;
+	opacity: 0.5;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: white;
+}
+.post_content p {
+	font-size: 18px;
+	font-weight: 700;
+	color: white;
+}
+.post_content .container_infos {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	padding-top: 25px;
+}
+.post_content .container_infos .postedBy {
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 13px;
+	font-weight: 800;
+	color: white;
+}
+.postedBy span {
+	font-size: 12px;
+	text-transform: uppercase;
+	opacity: 0.5;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: white;
+}
+.detailsA {
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 15px;
+	padding: 10px;
+	border: 1px solid;
+	border-radius: 10px;
+}
+
+
+@keyframes top {
+	0% {
+		opacity: 0;
+		bottom: -80px;
+	}
+
+	100% {
+		opacity: 1;
+		bottom: 0px;
+	}
+}
+
+@keyframes icon {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	50% {
+		opacity: 1;
+		transform: scale(1.3) rotate(-2deg);
+	}
+
+	100% {
+		opacity: 1;
+		bottom: 0px;
+	}
+}
+
+
+
+
+
+
+
+
